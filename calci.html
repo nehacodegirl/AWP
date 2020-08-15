@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax calculator</title>
+    <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script>
+    window.onscroll = function (){myFunction()};
+    
+    var head = document.getElementById("head");
+    var sticky = head.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        head.classList.add("sticky")
+      } else {
+        head.classList.remove("sticky");
+      }
+    }
+    
+    
+    
+    function CalculateIVU() {
+      var price = document.forms.txts.value;
+      var x = price;
+      var tax;
+      if( x <= 500000)
+      {tax = 0;}
+      else if(500000 < x && x <= 1000000)
+      { tax = 0.05 * x;}
+      else if(1000000 < x && x <= 2000000)
+      { tax = 0.1 * x;}
+      else if(2000000 < x && x <= 3000000)
+      { tax = 0.2 * x;}
+      else
+      { tax = 0.3 * x;}
+      var final = tax;
+      document.getElementById('res').value = final;
+      document.forms.txts.value="";
+    }
+    </script>
+        
+</head>
+<style>
+   input{
+       color:silver;
+       background-color: black;
+
+    };
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 bg-primary" style="height:550px ;">
+
+<!---------------calculator--------------------->
+                
+<form name="forms" id="forma">
+
+                    <h2> Income Tax Calculator</h2><br><br>
+                    <div class="tax">
+
+                    
+                      <table>
+                      
+                        <tr>
+                          <td>
+                          <p style="color:yellow;">[Enter your income here if income between 5 lakh to 10 lakh tax will be 5%,if income between 10 lakh to 20 lakh tax will be 10%,<br>if income between 20 lakh to 30 lakh tax will be 20%, above that 30%]</p>
+                            <label>Enter the Amount of Income
+                            <input type="text" name="txts" size=20></label>
+                            <br>
+                            <br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="height:20px; text-align:center;">
+                            <INPUT TYPE="button" NAME="one" VALUE="  1  " OnClick="forms.txts.value += '1'" style="margin:2px;">
+                            <INPUT TYPE="button" NAME="two" VALUE="  2  " OnCLick="forms.txts.value += '2'"style="margin:2px;">
+                            <INPUT TYPE="button" NAME="three" VALUE="  3  " OnClick="forms.txts.value  += '3'" style="margin:2px;">
+                            <br>
+                            
+                            <INPUT TYPE="button" NAME="four" VALUE="  4  " OnClick="forms.txts.value += '4'" style="margin:2px;">
+                            <INPUT TYPE="button" NAME="five" VALUE="  5  " OnCLick="forms.txts.value += '5'" style="margin:2px;">
+                            <INPUT TYPE="button" NAME="six" VALUE="  6  " OnClick="forms.txts.value += '6'" style="margin:2px;">
+                            <br>
+                            
+                            <INPUT TYPE="button" NAME="seven" VALUE="  7  " OnClick="forms.txts.value+= '7'" style="margin:2px;">
+                            <INPUT TYPE="button" NAME="eight" VALUE="  8  " OnCLick="forms.txts.value += '8'" style="margin:2px;">
+                            <INPUT TYPE="button" NAME="nine" VALUE="  9  " OnClick="forms.txts.value += '9'" style="margin:2px;">
+                             <br>
+                            
+                            <INPUT TYPE="button" NAME="clear" VALUE="  c  " OnClick="forms.txts.value = ''" OnClick="forms.resul.value = ''" style="margin:2px;">
+                            <INPUT TYPE="button" NAME="zero" VALUE="  0  " OnClick="forms.txts.value += '0'" style="margin:2px;">
+                            <INPUT TYPE="button" NAME="DoIt" VALUE="  =  " OnClick="CalculateIVU() = eval(forms.txts.value);"style="margin:2px;">
+                    
+                            <br>
+                            <br>
+                           <b> <input type="button" id="input" value="Calculate" onClick='CalculateIVU();'></b>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td><br><br>
+                        <label>The tax calculated on Income
+                            <input type="text" name="resul" id="res"></label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
