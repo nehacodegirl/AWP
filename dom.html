@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaPost</title>
+    <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="dom.js"></script>
+
+
+</head>
+<body>
+    <!----------container-->
+    <div class="container-fluid">
+    <!------------row1-->
+        <div class="row  justify-content-center align-items-center ">
+            <div class="col-12 col-md-6   bg-dark  " >
+                
+                <img src="https://img.icons8.com/color/90/000000/instagram-new.png"/>
+                <span style="font-family: cursive; color:silver; font-size: 30px;"> Welcome to Instagram Posts</span>
+                <span><img src="https://img.icons8.com/color/48/000000/two-hearts.png"/></span>
+            </div>
+
+        </div>
+
+        <!-----------row 2------>
+<!-----------------post 1----------->
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 d-flex flex-column ">
+                <!-------------row1-->
+                <div class="row " style="background-image: linear-gradient(orange,white,green); height:200px;" >
+                 <div class ="col d-flex justify-content-center align-items-center"
+                 style=" font-family: lucida calligraphy; font-size: 30px; color:rgb(14, 14, 133);">
+                    Happy Independence Day
+                    </div>
+                </div>
+
+                <!---------button------>
+                <div class="row">
+                    <div class="col-3 p-0">
+                        <button type="button" class="btn btn-success btn-block" 
+                        style="background-color: orange !important;"
+                        onclick="like(this)">Like
+                        <span>0</span>
+                    </button>
+                    </div>
+
+
+                    <div class="col-6 p-0">
+                        <input class="form-control" type="text" placeholder="Comment Here"/>
+                    </div>
+                    <div class="col-3 p-0">
+                        <button type="button"  onclick="readcomment(this);" class="btn btn-success btn-block">Comment</button>
+                    </div>
+                </div>
+
+                <!------------comment------->
+
+
+                <div class="d-flex flex-column " >
+                <div class="row mt-1 p-2" style="box-shadow: 5px;
+                border:2px solid gray; border-radius: 5px;">
+                    
+                        <div class="col-10 p-0" >
+                            sample comment
+                        </div>
+                        <div class="col-2 p-0">
+                        <button  type="button" 
+                        onclick="deletecomment(this);"
+                        class="btn btn-outline-danger btn-sm btn-block">Delete</button>
+                    </div>
+                    
+
+
+                </div>
+                </div>
+
+
+ 
+
+
+            </div>
+
+        </div>
+<!-----------------New Post---------->
+
+<div class="row justify-content-center mt-1">
+    <div class="col-12 col-md-6 d-flex flex-column ">
+        <!-------------row1-->
+        <div class="row " style="background-image:url(https://newsd.in/wp-content/uploads/2020/08/independence-day-5.jpg) ;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                height: 220px;" >
+         <div class ="col d-flex justify-content-center align-items-center"
+         style=" font-family: lucida calligraphy; font-size: 30px; color:rgb(14, 14, 133);">
+            
+            </div>
+        </div>
+
+        <!---------button------>
+        <div class="row">
+            <div class="col-3 p-0">
+                <button type="button" class="btn btn-success btn-block" 
+                style="background-color: orange !important;"
+                onclick="like(this)">Like
+                <span>0</span>
+            </button>
+            </div>
+
+
+            <div class="col-6 p-0">
+                <input class="form-control" type="text" placeholder="Comment Here">
+            </div>
+            <div class="col-3 p-0">
+                <button type="button" class="btn btn-success btn-block">Comment</button>
+            </div>
+        </div>
+
+        <!------------comment------->
+
+
+        <div class="d-flex flex-column " id="parentid">
+        <div class="row mt-1">
+            
+                <div class="col-10 p-0" id="child1">
+                    sample comment
+                </div>
+                <div class="col-2 p-0">
+                <button  type="button" class="btn btn-outline-danger btn-sm btn-block">Delete</button>
+            </div>
+            
+
+
+        </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
+
+    </div>
+</body>
+</html>
